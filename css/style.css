@@ -139,7 +139,7 @@ body a{
  }
 /*--banner--*/
 .banner {
-	background: url(../images/banner.jpg) no-repeat 0px 0px;
+	background: url(../images/banner.jpeg) no-repeat 0px 0px;
 	min-height: 580px;
 	background-size: 100% 100%;
 }
@@ -170,10 +170,10 @@ body a{
 	display: inline-block;
 }
 a.banner-btn span {
-	width: 80px;
-	height: 80px;
+	width: 50px;
+	height: 50px;
 	display: inline-block;
-	background: url(../images/banner_scroll.png) no-repeat 0px 0px;
+	background: url(../images/scroll_down_arrow.png) no-repeat 0px 0px;
 }
 a.banner-btn span:hover {
 	opacity: 0.9;
