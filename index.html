@@ -24,7 +24,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" href="css/flipclock.css">
-
+<style type="text/css">
+		p{
+			line-height: 100%;
+		}
+</style>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -96,8 +100,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="main">
 		   <div class="content_white">
             <h2>Welcome To SalukiLan!</h2>
-			 <p>Here you can find more information about the event and reserve a ticket</p>
-              <br>
+			 <p>Here you can find more information about the event and reserve a ticket. <br>
+			 SalukiLan is an excelent opportunity to have fun playing games and meet fellow <br>
+		 	 gamers. You can find out more about SalukiLan by clicking <a href="about.html">here</a>.</p>
               <br>
                <h2>Countdown to SalukiLan</h2>
                <br>
@@ -111,10 +116,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												var cur_hour = d.getHours();
 												var cur_min = d.getMinutes();
 												var cur_sec = d.getSeconds();
+												var cur_day = d.getUTCDate()+1;
+												var cur_month = d.getUTCMonth()+1;
+												var cur_year = d.getFullYear();
+
 
 												//Compares the two dates to get the info for the countdown
-                        var currentDate = new Date(2016, 3, 5, 12, 0, 0);
-                        var pastDate  = new Date(2015, 9, 20, cur_hour, cur_min, cur_sec);
+                        var currentDate = new Date(2016, 3, 5, 0, 0, 0);
+                        var pastDate  = new Date(cur_year, cur_month, cur_day, cur_hour, cur_min, cur_sec);
                         var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
 
                         // Instantiate a coutdown FlipClock
