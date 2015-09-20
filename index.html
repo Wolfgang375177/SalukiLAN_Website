@@ -23,6 +23,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---- start-smoth-scrolling---->
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/flipclock.css">
+
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -48,8 +50,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    		});
 			});
 		</script>
-		<!----//End-top-nav-script---->
-</script>
+<!----//End-top-nav-script---->
+<!---- Start of clock script ---->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/flipclock.js"></script>	
 </head>
 <body>
       <!----start-header---->
@@ -91,21 +95,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!----//start-content---->
 		<div class="main">
 		   <div class="content_white">
-				 <center>
-				 	<script src="./js/countdown.js" type="text/javascript"></script>
-				 	<script type="application/javascript">
-				 	var myCountdownTest = new Countdown({
-													 year	: 2016,
-													 month	: 3,
-													 day		: 5,
-													 width	: 700,
-													 height	: 100
-													 });
-				 </script>
-			 </center>
-			 <br>
-			<h2>Welcome To SalukiLan!</h2>
-			<p>Here you can find more information about the event and reserve a ticket</p>
+            <h2>Welcome To SalukiLan!</h2>
+			 <p>Here you can find more information about the event and reserve a ticket</p>
+              <br>
+              <br>
+               <h2>Countdown to SalukiLan</h2>
+               <br>
+              <div class="clock flip-clock-wrapper"></div>
+                <script type="text/javascript">
+                    var clock;
+                    $(document).ready(function() {
+
+                        // Grab the current date
+                        var currentDate = new Date();
+                        var pastDate  = new Date(currentDate.getFullYear(), 3, 5);
+                        var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
+
+                        // Instantiate a coutdown FlipClock
+                        clock = $('.clock').FlipClock(diff, {
+                            clockFace: 'DailyCounter',
+                            countdown: false,
+                            showSeconds: true
+                        });
+                    });
+                </script>
 		   <div class="content_white">
 			<h2>Need Help Finding The Event?</h2>
 			<p>No problem! Follow this <a href="">link</a> to get dirrections to the event.</p>
