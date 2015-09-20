@@ -107,8 +107,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     $(document).ready(function() {
 
                         // Grab the current date
-                        var currentDate = new Date();
-                        var pastDate  = new Date(currentDate.getFullYear(), 3, 5);
+												var d = new Date();
+												var cur_hour = d.getHours();
+												var cur_min = d.getMinutes();
+												var cur_sec = d.getSeconds();
+
+												//Compares the two dates to get the info for the countdown
+                        var currentDate = new Date(2016, 3, 5, 12, 0, 0);
+                        var pastDate  = new Date(2015, 9, 20, cur_hour, cur_min, cur_sec);
                         var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
 
                         // Instantiate a coutdown FlipClock
