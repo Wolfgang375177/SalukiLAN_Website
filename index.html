@@ -110,8 +110,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <script type="text/javascript">
                     var clock;
                     $(document).ready(function() {
-
-                        // Grab the current date
+											/*
+												Grabs the correct date and time.  Do not use getYear()
+												since it does not give the right value and throws
+												everything off as I found earlier.  To get the correct
+												date I had to throw a '+1' on to the end of the cur_day
+												and cur_month variables to get them to work correctly.
+											*/
 												var d = new Date();
 												var cur_hour = d.getHours();
 												var cur_min = d.getMinutes();
@@ -119,7 +124,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												var cur_day = d.getUTCDate()+1;
 												var cur_month = d.getUTCMonth()+1;
 												var cur_year = d.getFullYear();
-
 
 												//Compares the two dates to get the info for the countdown
                         var currentDate = new Date(2016, 3, 5, 0, 0, 0);
