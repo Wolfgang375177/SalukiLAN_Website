@@ -1,4 +1,4 @@
-c/*!
+/*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -743,7 +743,7 @@ pre code {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: left;
   padding-left: 60px;
-  border: 2px solid #000000;
+  border: 7px solid #000000;
 }
 .news_div time{
   font-size: 20px;
@@ -756,6 +756,12 @@ pre code {
 .news_div p{
   color: #fff;
   padding-bottom: 50px;
+}
+.news_h1 {
+  font-weight: bold;
+  font-size: 70px;
+  padding-top: 50px;
+  text-decoration: underline;
 }
 @media (min-width: 768px) {
   .container {
