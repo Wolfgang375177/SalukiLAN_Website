@@ -739,6 +739,24 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.news_div{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: left;
+  padding-left: 60px;
+  border: 2px solid #000000;
+}
+.news_div time{
+  font-size: 20px;
+  color: #8E8E8E;
+  padding-left: 40px;
+}
+.news_div h3{
+  padding-top: 50px;
+}
+.news_div p{
+  color: #fff;
+  padding-bottom: 50px;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;
