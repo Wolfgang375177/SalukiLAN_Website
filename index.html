@@ -1,6 +1,6 @@
 <!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
+Author: Developers^4
+Author URL: https://www.github.com/siucamcm
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
@@ -23,6 +23,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---- start-smoth-scrolling---->
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="css/flipclock.css">
+<style type="text/css">
+		p{
+			line-height: 100%;
+		}
+</style>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -48,8 +54,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    		});
 			});
 		</script>
-		<!----//End-top-nav-script---->
-</script>
+<!----//End-top-nav-script---->
+<!---- Start of clock script ---->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/flipclock.js"></script>
 </head>
 <body>
       <!----start-header---->
@@ -63,10 +71,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul class="nav" id="nav">
 					  <li class="current"><a href="index.html">Home</a></li>
 					  <li><a href="about.html">About</a></li>
-					  <li><a href="services.html">Event Rules</a></li>
-					  <li><a href="project.html">Tournaments</a></li>
-					  <li><a href="blog.html">Gallery</a></li>
-					  <li><a href="contact.html">Sponsors</a></li>
+					  <li><a href="event_rules.html">Event Rules</a></li>
+					  <li><a href="#">Tournaments</a></li>
+					  <li><a href="#">Gallery</a></li>
+					  <li><a href="#">Sponsors</a></li>
 						<li><a href="#">Reserve A Seat</a></li>
 						<li><a href="#">My Account</a></li>
 					  <div class="clear"></div>
@@ -91,33 +99,77 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!----//start-content---->
 		<div class="main">
 		   <div class="content_white">
-				 <center>
-				 	<script src="./js/countdown.js" type="text/javascript"></script>
-				 	<script type="application/javascript">
-				 	var myCountdownTest = new Countdown({
-													 year	: 2016,
-													 month	: 3,
-													 day		: 5,
-													 width	: 700,
-													 height	: 100
-													 });
-				 </script>
-			 </center>
-			 <br>
-			<h2>Welcome To SalukiLan!</h2>
-			<p>Here you can find more information about the event and reserve a ticket</p>
-		   <div class="content_white">
+            <h2>Welcome To SalukiLan!</h2>
+			 <p>Here you can find more information about the event and reserve a ticket. <br>
+			 SalukiLan is an excelent opportunity to have fun playing games and meet fellow <br>
+		 	 gamers. You can find out more about SalukiLan by clicking <a href="about.html">here</a>.</p>
+              <br>
+               <h2>Countdown to SalukiLan</h2>
+               <br>
+              <div class="clock flip-clock-wrapper"></div>
+                <script type="text/javascript">
+                    var clock;
+                    $(document).ready(function() {
+											/*
+												Grabs the correct date and time.  Do not use getYear()
+												since it does not give the right value and throws
+												everything off as I found earlier.  To get the correct
+												date I had to throw a '+1' on to the end of the cur_day
+												and cur_month variables to get them to work correctly.
+											*/
+												var d = new Date();
+												var cur_hour = d.getHours();
+												var cur_min = d.getMinutes();
+												var cur_sec = d.getSeconds();
+												var cur_day = d.getUTCDate()+1;
+												var cur_month = d.getUTCMonth()+1;
+												var cur_year = d.getFullYear();
+
+												//Compares the two dates to get the info for the countdown
+                        var currentDate = new Date(2016, 3, 5, 0, 0, 0);
+                        var pastDate  = new Date(cur_year, cur_month, cur_day, cur_hour, cur_min, cur_sec);
+                        var diff = currentDate.getTime() / 1000 - pastDate.getTime() / 1000;
+
+                        // Instantiate a coutdown FlipClock
+                        clock = $('.clock').FlipClock(diff, {
+                            clockFace: 'DailyCounter',
+                            countdown: true,
+                            showSeconds: true
+                        });
+                    });
+                </script>
+		  <div class="content_white">
 			<h2>Need Help Finding The Event?</h2>
 			<p>No problem! Follow this <a href="">link</a> to get dirrections to the event.</p>
 		  </div>
-		</div>
+				<h1 class="news_h1">SalukiLan News</h1>
+				<div class="news_div">
+					<article>
+						<header>
+							<h3>Work Is Underway For The Site<time pubdate="pubdate">(9-20-2015 7:25pm)</time></h3>
+						</header>
+						<p>
+							More is coming to the website.  Hopefully we will have <br>
+							more of the site functioning soon.
+						</p>
+					</article>
+				<article>
+					<header>
+						<h3>Welcome To The Page!<time pubdate="pubdate">(9-20-2015 7:05pm)</time></h3>
+					</header>
+					<p>
+						Hello and welcome!  Follow the news here to get updates <br>
+						on SalukiLan and its events.  More to be posted later! <br>
+						Keep up the good work Developers<sup>4</sup>!
+					</p>
+				</article>
+			</div>
 		<div class="footer">
 			<div class="footer_top">
 				<div class="container">
 					<div class="footer_head">
 						<h2>Sponsors</h2>
-						<p><img src="./images/ACM_Logo.png" alt="ACM Logo" width="100"/><img src="./images/Tesoro.png" alt="Tesoro Logo" width="300"/><img src="./images/BeQuietLogo.png" alt="BeQuiet Logo" width="200"/></p>
-						<p><img src="./images/PepsiMidamerica.jpg" alt="Pepsi Logo" width="200"/></p>
+						<p><img src="./images/ACM_Logo.png" alt="ACM Logo" width="100"/></p>
 					</div>
 		    <div class="footer_bottom">
 		    	<div class="copy">
