@@ -77,19 +77,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 	</div>
                 </div>
                 <div class="contact_bottom">
-                   <form method="post" action="contact-post.html">
-					<div class="contact-to">
-                     	<input type="text" class="text" value="Name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name...';}">
-					 	<input type="text" class="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" style="margin-left: 10px">
-					 	<input type="text" class="text" value="Subject..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject...';}" style="margin-left: 10px">
-					</div>
-					<div class="text2">
-	                   <textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
-	                </div>
-	                <div>
-	               		<a href="#" class="submit">Submit</a>
-	                </div>
-	             </form>
+                   <form method="post" enctype="text/plain" action="javascript:window.location='mailto:jacob.reed95@siu.edu?subject=Subject: '
+        	 					+document.getElementById('mail_sub').value+'&body='+document.getElementById('user_message').value\n"/>
+										 	<div class="contact-to">
+                     		<input type="text" id="usr_name" class="text" value="Name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name...';}">
+					 							<input type="text" id="usr_email" class="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" style="margin-left: 10px">
+					 							<input type="text" id="mail_sub" class="text" value="Subject..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject...';}" style="margin-left: 10px">
+											</div>
+											<div class="text2">
+	                   		<textarea id="user_message" value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
+	                		</div>
+	                	<div>
+	               			<input type="submit" class="submit" name="Submit" value="Submit"/>
+	                	</div>
+	             		</form>
                 </div>
 			</div>
 		</div>
