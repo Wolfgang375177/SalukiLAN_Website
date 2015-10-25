@@ -55,9 +55,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			});
 		</script>
 <!----//End-top-nav-script---->
-<!---- Start of clock script ---->
+<!---- //Start of clock script ---->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/flipclock.js"></script>
+<!---- //End of the clock script ---->
+<!---- //Beginning of the Twitter script ---->
+<script>
+window.twttr = (function(d, s, id) {
+  	var js, fjs = d.getElementsByTagName(s)[0],
+    	t = window.twttr || {};
+  	if (d.getElementById(id)) return t;
+  	js = d.createElement(s);
+  	js.id = id;
+  	js.src = "https://platform.twitter.com/widgets.js";
+  	fjs.parentNode.insertBefore(js, fjs);
+  	t._e = [];
+  	t.ready = function(f) {
+    	t._e.push(f);
+  	};
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+<!---- //End of the Twitter script ---->
 </head>
 <body>
       <!----start-header---->
