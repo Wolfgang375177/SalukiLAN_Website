@@ -5833,4 +5833,14 @@ button.close {
 .wrap{
   text-align: center;
 }
+.left{
+  float: right;
+}
+.right{
+  float: right;
+}
+.center{
+  text-align: left;
+  display: inline-block;
+}
 /*# sourceMappingURL=bootstrap.css.map */
