@@ -62,8 +62,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---- //Beginning of the Twitter script ---->
 <script>
 !function(d,s,id){
-	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);
-		js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+	if(!d.getElementById(id)){
+		js=d.createElement(s);
+		js.id=id;
+		js.src=p+"://platform.twitter.com/widgets.js";
 		fjs.parentNode.insertBefore(js,fjs);
 	}}(document,"script","twitter-wjs");
 	</script>
@@ -84,6 +87,18 @@ window.twttr = (function(d, s, id) {
 }(document, "script", "twitter-wjs"));
 </script>
 <!---- //End of the Twitter script ---->
+<!---- //Begining of the Facebook script ---->
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!---- //End of the Facebook Script ---->
 </head>
 <body>
       <!----start-header---->
@@ -170,7 +185,16 @@ window.twttr = (function(d, s, id) {
 		  </div>
 				<h1 class="news_h1">SalukiLan News</h1>
 				<div class="">
-					<a class="twitter-timeline" href="https://twitter.com/salukilan" data-widget-id="658133972703158272">Tweets by @salukilan</a>
+					<a class="twitter-timeline" href="https://twitter.com/salukilan"
+					data-widget-id="658133972703158272">Tweets by @salukilan</a>
+					<div class="fb-page" data-href="https://www.facebook.com/facebook"
+					data-width="700" data-height="900" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+						<div class="fb-xfbml-parse-ignore">
+							<blockquote cite="https://www.facebook.com/facebook">
+								<a href="https://www.facebook.com/facebook">Facebook</a>
+							</blockquote>
+						</div>
+					</div>
 				</div>
 		<div class="footer">
 			<div class="footer_top">
