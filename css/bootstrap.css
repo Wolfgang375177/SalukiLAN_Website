@@ -399,13 +399,14 @@ h6 .small,
 
 .h1,
 .h2{
-  background: #600;
-  display: block;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 25px;
+  background: #B5B5B5;
+  display: inline-block;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  box-shadow: 6px 6px 14px #000000;
 }
 h1,
 .h1,
@@ -774,7 +775,6 @@ pre code {
 .news_h1 {
   font-weight: bold;
   font-size: 70px;
-  padding-top: 50px;
     text-shadow: 2px 2px 8px #909090;
 }
 .rules_div{
