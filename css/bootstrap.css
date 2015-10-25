@@ -366,6 +366,7 @@ h6,
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
+    text-shadow: 2px 2px 5px #909090;
 }
 h1 small,
 h2 small,
@@ -763,7 +764,7 @@ pre code {
   font-weight: bold;
   font-size: 70px;
   padding-top: 50px;
-  text-decoration: underline;
+    text-shadow: 2px 2px 8px #909090;
 }
 .rules_div{
   font-family:  "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5842,5 +5843,19 @@ button.close {
 .center{
   text-align: left;
   display: inline-block;
+}
+.wrapper {
+    width: 1920px;
+    align-items: center;
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+.first {
+    width: 800px;
+    padding-left: 300px;
+    float: left; /* add this */
+}
+.second {
+    width: 800px;
+    padding-left: 0px;/* if you don't want #second to wrap below #first */
 }
 /*# sourceMappingURL=bootstrap.css.map */
