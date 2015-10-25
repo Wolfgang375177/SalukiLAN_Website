@@ -61,6 +61,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---- //End of the clock script ---->
 <!---- //Beginning of the Twitter script ---->
 <script>
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);
+		js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js,fjs);
+	}}(document,"script","twitter-wjs");
+	</script>
+<script>
 window.twttr = (function(d, s, id) {
   	var js, fjs = d.getElementsByTagName(s)[0],
     	t = window.twttr || {};
@@ -162,7 +169,9 @@ window.twttr = (function(d, s, id) {
 			<p>No problem! Follow this <a href="">link</a> to get dirrections to the event.</p>
 		  </div>
 				<h1 class="news_h1">SalukiLan News</h1>
-
+				<div class="">
+					<a class="twitter-timeline" href="https://twitter.com/salukilan" data-widget-id="658133972703158272">Tweets by @salukilan</a>
+				</div>
 		<div class="footer">
 			<div class="footer_top">
 				<div class="container">
