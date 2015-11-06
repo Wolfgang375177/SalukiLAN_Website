@@ -5,9 +5,44 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
+<script src="js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function prevTimers() {
+			return allTimers().slice( 0, $('#pager a.selected').index() );
+		}
+		function allTimers() {
+			return $('#pager a span');
+		}
+
+		$(function() {
+			$('#carousel').carouFredSel({
+				items: 1,
+				auto: {
+					pauseOnHover: 'resume',
+					progress: {
+						bar: '#pager a:first span'
+					}
+				},
+				scroll: {
+					fx: 'crossfade',
+					duration: 300,
+					timeoutDuration: 2000,
+					onAfter: function() {
+						allTimers().stop().width( 0 );
+						prevTimers().width( 140 );
+						$(this).trigger('configuration', [ 'auto.progress.bar', '#pager a.selected span' ]);
+					}
+				},
+				pagination: {
+					container: '#pager',
+					anchorBuilder: false
+				}
+			});
+		});
+	</script>
 <!---- start-smoth-scrolling---->
 <script type="text/javascript">
-		jQuery(document).\ready(function($) {
+		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
@@ -17,10 +52,64 @@
 <!---- start-smoth-scrolling---->
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link rel="stylesheet" href="css/flipclock.css">
 <style type="text/css">
 		p{
 			line-height: 100%;
+		}
+    htmldy {
+			height: 100%;
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			min-height: 450px;
+		}
+		body * {
+			font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+			font-size: 14px;
+			color: #333;
+			line-height: 22px;
+		}
+
+		#wrapper {
+			width: 576px;
+			height: 335px;
+			margin: -168px 0 0 -287px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+		}
+		#carousel {
+			width: 576px;
+			height: 335px;
+            position: center;
+		}
+		#carousel img {
+			border: 1px solid #ccc;
+			display: block;
+			padding: 10px;
+			float: left;
+		}
+		#pager {
+			margin-top: 5px;
+			width: 600px;
+		}
+		#pager a, #pager span {
+			display: block;
+			height: 10px;
+		}
+		#pager a {
+			border: 1px solid #ccc;
+			width: 140px;
+			margin-right: 3px;
+			float: left;
+		}
+		#pager a:hover {
+			border-color: #999;
+		}
+		#pager span {
+			background-color: #ccc;
+			width: 0px;
 		}
 </style>
 <!-- Custom Theme files -->
@@ -49,9 +138,6 @@
 			});
 		</script>
 <!----//End-top-nav-script---->
-<!---- Start of clock script ---->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/flipclock.js"></script>
 </head>
 <body>
       <!----start-header---->
@@ -82,11 +168,20 @@
 
 	<div class="text-center">
 		<h1 style="border-style: solid">Pictures of Previous Events</h1>
-		<table class="table-bordered">
-
-		</table>
-	</div>
-
+		<div id="wrapper">
+        <div id="carousel">
+            <img src="images/cars.jpg" alt="cars" width="554" height="313" />
+            <img src="images/rat.jpg" alt="rat" width="554" height="313" />
+            <img src="images/toystory.jpg" alt="toystory" width="554" height="313" />
+            <img src="images/walle.jpg" alt="walle" width="554" height="313" class="last" />
+        </div>
+        <div id="pager">
+            <a href="#"><span></span></a>
+            <a href="#"><span></span></a>
+            <a href="#"><span></span></a>
+            <a href="#"><span></span></a>
+        </div>
+        </div>
       <div class="footer">
             <div class="footer_top">
                   <div class="container">
